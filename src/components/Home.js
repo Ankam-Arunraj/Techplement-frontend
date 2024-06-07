@@ -9,10 +9,12 @@ function Home() {
   const [currentQuote, setCurrentQuote] = useState({}); // new state to store the current quote
 
   useEffect(() => {
-    fetch('http://localhost:7000/quote/search')
+    fetch('https://techplement-backend.onrender.com/quote/search')
       .then(response => response.json())
       .then(data => setQuotes(data));
   }, []);
+
+  //\http://localhost:7000/quote/search
 
   const searchQuote = (e) => {
     setSearchKey(e.target.value);
